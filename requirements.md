@@ -1,74 +1,132 @@
-\# Software Requirements Specification (SRS)
+
+
+\# Software Requirements
 
 
 
-\## Project Title
+\## 1. Project Title
 
-AI-Based Smart Surveillance \& Object Tracking System
-
-
-
-\## 1. Functional Requirements
+AI-Based Smart Surveillance and Object Tracking System
 
 
 
-| ID | Requirement |
+\## 2. Introduction
 
-|---|---|
+This project uses computer vision to detect and track objects in a
 
-| FR-01 | The system shall read video from a specified file path. |
+surveillance video. It also detects motion, records related object
 
-| FR-02 | The system shall validate the video file and handle invalid input. |
-
-| FR-03 | The system shall preprocess video frames through resizing, denoising, and contrast enhancement. |
-
-| FR-04 | The system shall detect objects using YOLO. |
-
-| FR-05 | The system shall track detected objects across frames using persistent tracking IDs. |
-
-| FR-06 | The system shall detect motion by comparing consecutive frames. |
-
-| FR-07 | The system shall record surveillance events in a CSV file. |
-
-| FR-08 | The system shall generate an annotated output video. |
-
-| FR-09 | The system shall calculate and display event analytics. |
+information in a CSV file, and generates a processed video.
 
 
 
-\## 2. Non-Functional Requirements
+\## 3. Functional Requirements
 
 
 
-| ID | Requirement |
-
-|---|---|
-
-| NFR-01 | Modularity: The system shall separate major functions into individual modules. |
-
-| NFR-02 | Maintainability: Code shall use clear names, structured functions, and appropriate comments. |
-
-| NFR-03 | Reliability: The system shall validate input paths and output video initialization. |
-
-| NFR-04 | Performance: The system shall process video frame by frame rather than loading the entire video into memory. |
-
-| NFR-05 | Usability: The system shall display clear console messages and output locations. |
-
-| NFR-06 | Testability: Modules and the pipeline shall have tests that can be run independently. |
+FR-1: The system should read a video file from the input folder.
 
 
 
-\## 3. Hardware Requirements
+FR-2: The system should check whether the video can be opened and
 
-\- Computer capable of running Python 3.11.
-
-\- Sufficient RAM and storage for video processing.
-
-\- Compatible GPU recommended for faster inference; CPU processing may be slower.
+read its frames.
 
 
 
-\## 4. Software Requirements
+FR-3: The system should resize video frames and apply image
+
+preprocessing techniques.
+
+
+
+FR-4: The system should detect objects in video frames using YOLO.
+
+
+
+FR-5: The system should track detected objects across video frames.
+
+
+
+FR-6: The system should detect motion by comparing consecutive
+
+frames.
+
+
+
+FR-7: When motion is detected, the system should record information
+
+about tracked objects in a CSV file.
+
+
+
+FR-8: The system should generate an output video showing object
+
+detection and tracking results.
+
+
+
+FR-9: The system should display basic analytics, including the
+
+number of recorded events, object types, and average confidence.
+
+
+
+\## 4. Non-Functional Requirements
+
+
+
+NFR-1: The code should be divided into separate modules so that
+
+each part can be maintained independently.
+
+
+
+NFR-2: The system should handle an invalid or unavailable video
+
+file without continuing normal processing.
+
+
+
+NFR-3: The system should process video frames in sequence.
+
+
+
+NFR-4: The output video and event log should be saved in the
+
+specified output folder.
+
+
+
+NFR-5: The system should be easy to run using Python and the
+
+required libraries.
+
+
+
+NFR-6: Individual modules should be testable separately.
+
+
+
+\## 5. Hardware Requirements
+
+
+
+\- Computer or laptop
+
+\- Minimum 8 GB RAM recommended
+
+\- CPU; a compatible GPU can be used for faster processing
+
+\- Storage space for input and output videos
+
+
+
+\## 6. Software Requirements
+
+
+
+\- Windows or another Python-supported operating system
 
 \- Python 3.11
 
@@ -76,43 +134,59 @@ AI-Based Smart Surveillance \& Object Tracking System
 
 \- Ultralytics YOLO
 
-\- Git
+\- NumPy
 
-\- Packages listed in requirements.txt
-
-
-
-\## 5. Inputs and Outputs
+\- Git and GitHub
 
 
 
-\### Inputs
-
-\- Supported video file.
-
-\- YOLO model weights.
-
-\- Configuration values for processing and motion detection.
+\## 7. Input and Output
 
 
 
-\### Outputs
+Input:
 
-\- Annotated surveillance video.
-
-\- CSV event log.
-
-\- Console analytics summary.
+\- A video file placed in the input folder.
 
 
 
-\## 6. Constraints
+Output:
 
-\- The current implementation processes a configured video file.
+\- Processed surveillance video.
 
-\- Detection accuracy depends on model performance and video conditions.
+\- CSV file containing recorded object events.
 
-\- Motion detection may respond to camera movement or lighting changes.
+\- Basic analytics printed after processing.
 
-\- Event logs may contain repeated observations of the same tracked object.
+
+
+\## 8. Limitations
+
+
+
+\- The current version processes a video file, not a live CCTV feed.
+
+\- Motion detection is based on differences between video frames.
+
+\- The CSV may contain repeated observations of the same tracked
+
+&#x20; object.
+
+\- The system does not independently determine whether an activity
+
+&#x20; is suspicious.
+
+
+
+\## 9. Future Improvements
+
+
+
+\- Add live camera support.
+
+\- Reduce repeated event records.
+
+\- Add notifications for selected events.
+
+\- Improve motion and activity analysis.
 

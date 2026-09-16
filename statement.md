@@ -4,91 +4,103 @@
 
 \## Project Title
 
-AI-Based Smart Surveillance \& Object Tracking System
+AI-Based Smart Surveillance and Object Tracking System
 
 
 
-\## 1. Problem Statement
+\## Problem Statement
 
-Traditional video surveillance requires continuous human monitoring. Watching long video recordings makes it difficult and time-consuming to identify moving objects and important activities.
+In normal CCTV systems, a person has to watch the video to
 
+identify movement or suspicious activity. This can take a lot
 
-
-This project aims to develop a Computer Vision-based system that detects and tracks objects in video footage, identifies motion, and records surveillance events automatically.
-
-
-
-\## 2. Objectives
-
-\- Read and process video frames.
-
-\- Detect objects using YOLO.
-
-\- Track objects across frames using persistent IDs.
-
-\- Detect motion between consecutive frames.
-
-\- Store surveillance events in a CSV file.
-
-\- Generate an annotated video and analytics summary.
+of time, especially when the video is long.
 
 
 
-\## 3. Project Scope
+Our project aims to make this process easier by detecting and
 
-The project focuses on analyzing prerecorded video files. It integrates video processing, object detection, tracking, motion detection, event logging, and basic analytics.
+tracking objects in a video and recording motion-related
 
-
-
-Live camera monitoring, a web dashboard, and automatic alerts are outside the current implementation.
+events automatically.
 
 
 
-\## 4. Target Users
+\## Objective
 
-\- Students learning Computer Vision.
+The main objective of this project is to build a computer
 
-\- Developers experimenting with video analysis.
+vision system that can process a video, identify objects,
 
-\- Users interested in basic automated surveillance analysis.
+track them across frames, and save detected events for
 
-
-
-\## 5. High-Level Features
-
-1\. Video input and frame reading.
-
-2\. Image preprocessing.
-
-3\. YOLO-based object detection.
-
-4\. Object tracking.
-
-5\. Motion detection.
-
-6\. CSV event logging.
-
-7\. Analytics and annotated video generation.
+further analysis.
 
 
 
-\## 6. Expected Outputs
+\## What We Are Building
 
-\- Annotated surveillance video.
+We are developing a Python-based surveillance system using
 
-\- CSV file containing logged events.
+OpenCV and YOLO. The system reads a video, processes its
 
-\- Console summary of processed frames, events, tracked IDs, and object categories.
-
-
-
-\## 7. Technologies Used
-
-Python, OpenCV, Ultralytics YOLO, CSV, Git, and GitHub.
+frames, detects and tracks objects, and checks for motion.
 
 
 
-\## 8. Project Repository
+When motion is detected, information about tracked objects
+
+is saved in a CSV file. The system also generates an output
+
+video showing the detection and tracking results.
+
+
+
+\## Project Scope
+
+The current version works with a video file. It focuses on
+
+object detection, object tracking, motion detection, event
+
+logging, and basic analytics.
+
+
+
+Live CCTV integration and advanced suspicious-activity
+
+classification are outside the current implementation.
+
+
+
+\## Expected Output
+
+\- Processed surveillance video with detection and tracking
+
+&#x20; information.
+
+\- CSV file containing recorded events.
+
+\- Basic statistics about recorded events and detected
+
+&#x20; object types.
+
+
+
+\## Technologies Used
+
+\- Python
+
+\- OpenCV
+
+\- YOLO (Ultralytics)
+
+\- CSV
+
+\- Git and GitHub
+
+
+
+\## Repository
 
 https://github.com/adityasaini2005/smart-surveillance-cv
 
